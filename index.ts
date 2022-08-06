@@ -6,9 +6,9 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const numbers = []
+const numbers:Number[] = []
 
-export function primeNumbers(n){ 
+export function primeNumbers(n:Number){ 
   primeNumNext:
   for (let i = 2; i <= n; i++){
     for (let j = 2; j < i; j++) {
@@ -20,7 +20,7 @@ export function primeNumbers(n){
   return numbers
 }
 
-function colorNumbers(arr) {
+function colorNumbers(arr:Number[]) {
   for (let i = 0; i < arr.length; i += 3) {
     process.stdout.write(`${arr[i]}, `.green);
     if (arr[i + 1]) {
@@ -30,7 +30,7 @@ function colorNumbers(arr) {
       }
     } 
   }
-  process.stdout.moveCursor(-2)
+  process.stdout.moveCursor(-2,0)
   process.stdout.write(' ')
 }
 
