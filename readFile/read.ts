@@ -4,7 +4,7 @@ import readline from "readline"
 export const writeIPLog = () => {
 
   const writeFile = (ip: string, line: string) => {
-    fs.createWriteStream(`./ipLog/${ip}.log`, { flags: 'a', encoding: 'utf8' }).write(`${line} \n`)
+    fs.createWriteStream(`./readFile/ipLog/${ip}.log`, { flags: 'a', encoding: 'utf8' }).write(`${line} \n`)
   }
 
   const rl = readline.createInterface({

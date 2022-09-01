@@ -2,7 +2,7 @@
 import fs from "fs"
 import { writeIPLog } from "./read"
 
-const generateFile:Promise<void>= (async() => {
+const generateFile: Promise<void> = (async () => {
 
   const writeStream: fs.WriteStream = await fs.createWriteStream('./access.log', { flags: 'a', encoding: 'utf8' })
 
@@ -19,7 +19,7 @@ const generateFile:Promise<void>= (async() => {
 
   const randomIp = () => Array(2).fill(0).map((_, i) => Math.floor(Math.random() * 254)).join('.')
 
-  let size: number =  fs.statSync('./access.log').size / (1024 * 1024)
+  let size: number = fs.statSync('./access.log').size / (1024 * 1024)
   for (let i = 0; i <= 1000000; i++) {
     if (size >= 90 && size <= 100) {
       console.log('Файл достиг 100Mb')
