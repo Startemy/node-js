@@ -2,3 +2,4 @@
 node_modules
 access.log
 *.log
+chat/node_modules
